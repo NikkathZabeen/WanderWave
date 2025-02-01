@@ -1,0 +1,73 @@
+<style>
+  .search-btn{
+    background-color: rgb(219, 48, 48);
+  color: #fff;
+  border-radius: 25px;
+  padding: 0 1rem 0 1rem;
+  }
+  .search-btn:hover{
+    background-color: rgb(219, 48, 48);
+  color: #fff;
+  }
+  .search-btn i{
+    display: inline;
+    margin-right: 0.5rem;
+  }
+  .search-bar{
+    border-radius: 25px;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+    font-size: 0.8rem;
+  }
+  .new-listing a{
+    color: rgb(219, 48, 48);
+  }
+  .explore a{
+    padding-right: 0.2rem;
+  }
+</style>
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass "></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav explore">
+          <a class="nav-link" href="/listings">Explore</a>
+        </div>
+        <div class="navbar-nav ms-auto">
+          
+          <form class="d-flex" role="search" onsubmit="updateHref(event)">
+            <input id="searchInput" class="form-control me-2 search-bar" type="search" placeholder="Search destinations">
+            <a id="searchLink" href="/listings/search/"><button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button></a>
+        </form>
+
+
+        </div>
+
+
+        <div class="navbar-nav  ms-auto new-listing" >
+          <a class="nav-link " href="/listings/new">List your Space</a>
+
+        <% if(!currUser)  { %>
+          <a class="nav-link "  href="/signup"><b>Signin</b></a>
+          <a class="nav-link" href="/login"><b>Login</b></a>
+        <% } %> 
+        <% if(currUser)  { %>
+          <a class="nav-link" href="/logout"><b>Logout</b></a>
+          <% } %>  
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+
+<script>
+    function updateHref(event) {
+        event.preventDefault(); // Prevent the form from submitting the traditional way
+        const inputValue = document.getElementById('searchInput').value; // Get the input value
+        const searchLink = document.getElementById('searchLink');
+        searchLink.href = `/listings/search/${encodeURIComponent(inputValue)}`; // Update the href with the input value
+        searchLink.click(); // Programmatically click the link to navigate
+    }
+</script>
