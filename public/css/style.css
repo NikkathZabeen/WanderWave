@@ -109,3 +109,32 @@ background-color: white;
     height: 400px;
     width: 80vh;
  }
+ /* Responsive Design */
+@media screen and (max-width: 768px) {
+    .navbar {
+        height: 4rem;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .f-info {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        height: 3.5rem;
+    }
+    
+    .container {
+        padding: 0 0.5rem;
+    }
+    
+    .f-info {
+        font-size: 12px;
+    }
+}
+
