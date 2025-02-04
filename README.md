@@ -26,11 +26,8 @@
 
 ## 🖼 Screenshots
 
-![Screenshot1](https://your-screenshot-link1.com)
-*Homepage with property listings and geolocation map.*
+![Screenshot1](./screenshots/homepage.png)
 
-![Screenshot2](https://your-screenshot-link2.com)
-*Property details page with customer reviews and images.*
 
 ## 💡 Project Goals
 
